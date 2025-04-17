@@ -380,6 +380,10 @@ func (g *Generator) transformValueNames(values []Value, transformMethod string) 
 		fn = func(s string) string {
 			return strings.ToLower(name.Delimit(s, ' '))
 		}
+	case "whitespace_upper", "whitespace-upper":
+		fn = func(s string) string {
+			return strings.ToUpper(name.Delimit(s, ' '))
+		}
 	default:
 		return
 	}
